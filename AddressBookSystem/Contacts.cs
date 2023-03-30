@@ -2,30 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AddressBookSystem
 {
     class Contacts
     {
-        public string FirstName;
-        public string LastName;
-        public string Address;
-        public string City;
-        public string State;
-        public int Zip;
-        public int PhoneNumber;
-        public string Email;
-        public Contacts(string firstName, string lastName, string addr, string city,string state, int zip, int phoneNumber, string email)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            Address = addr;
-            City = city;
-            State = state;
-            Zip = zip;
-            PhoneNumber = phoneNumber;
-            Email = email;
-        }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
     }
 }

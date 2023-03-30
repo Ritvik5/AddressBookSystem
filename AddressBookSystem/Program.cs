@@ -14,7 +14,8 @@
                 Console.WriteLine("1. Add a new contact");
                 Console.WriteLine("2. Edit an existing contact");
                 Console.WriteLine("3. Print all contacts");
-                Console.WriteLine("4. Quit");
+                Console.WriteLine("4. Delete existing contacts");
+                Console.WriteLine("5. Quit");
 
                 Console.Write("Enter your choice: ");
                 string choice = Console.ReadLine();
@@ -71,8 +72,18 @@
                         break;
 
                     case "4":
-                        return;
+                        Console.WriteLine("Enter the name of the contact to delete:");
 
+                        Console.Write("First Name: ");
+                        string deleteFirstName = Console.ReadLine();
+
+                        Console.Write("Last Name: ");
+                        string deleteLastName = Console.ReadLine();
+
+                        myAddressBook.DeleteContact(deleteFirstName, deleteLastName);
+                        break;
+                    case "5":
+                        return;
                     default:
                         Console.WriteLine("Invalid choice.");
                         break;

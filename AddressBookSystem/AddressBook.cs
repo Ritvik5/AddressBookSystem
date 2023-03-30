@@ -72,5 +72,19 @@
 
             Console.WriteLine("Contact updated.");
         }
+
+        public void DeleteContact(string firstName, string lastName)
+        {
+            Contacts contactToDelete = contacts.Find(contact => contact.FirstName == firstName && contact.LastName == lastName);
+
+            if (contactToDelete == null)
+            {
+                Console.WriteLine("Contact not found.");
+                return;
+            }
+
+            contacts.Remove(contactToDelete);
+            Console.WriteLine("Contact deleted.");
+        }
     }
 }

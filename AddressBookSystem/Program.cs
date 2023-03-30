@@ -11,48 +11,73 @@
 
             while (true)
             {
-                
-                Console.WriteLine("Enter contact information:");
+                Console.WriteLine("1. Add a new contact");
+                Console.WriteLine("2. Edit an existing contact");
+                Console.WriteLine("3. Print all contacts");
+                Console.WriteLine("4. Quit");
 
-                Contacts newContact = new Contacts();
+                Console.Write("Enter your choice: ");
+                string choice = Console.ReadLine();
 
-                Console.Write("First Name: ");
-                newContact.FirstName = Console.ReadLine();
-
-                Console.Write("Last Name: ");
-                newContact.LastName = Console.ReadLine();
-
-                Console.Write("Address: ");
-                newContact.Address = Console.ReadLine();
-
-                Console.Write("City: ");
-                newContact.City = Console.ReadLine();
-
-                Console.Write("State: ");
-                newContact.State = Console.ReadLine();
-
-                Console.Write("Zip: ");
-                newContact.Zip = Console.ReadLine();
-
-                Console.Write("Phone Number: ");
-                newContact.PhoneNumber = Console.ReadLine();
-
-                Console.Write("Email: ");
-                newContact.Email = Console.ReadLine();
-
-                myAddressBook.AddContact(newContact);
-
-                Console.Write("Add another contact? (y/n) ");
-                string answer = Console.ReadLine();
-
-                if (answer.ToLower() != "y")
+                switch (choice)
                 {
-                    break;
+                    case "1":
+                        Console.WriteLine("Enter contact information:");
+
+                        Contacts newContact = new Contacts();
+
+                        Console.Write("First Name: ");
+                        newContact.FirstName = Console.ReadLine();
+
+                        Console.Write("Last Name: ");
+                        newContact.LastName = Console.ReadLine();
+
+                        Console.Write("Address: ");
+                        newContact.Address = Console.ReadLine();
+
+                        Console.Write("City: ");
+                        newContact.City = Console.ReadLine();
+
+                        Console.Write("State: ");
+                        newContact.State = Console.ReadLine();
+
+                        Console.Write("Zip: ");
+                        newContact.Zip = Console.ReadLine();
+
+                        Console.Write("Phone Number: ");
+                        newContact.PhoneNumber = Console.ReadLine();
+
+                        Console.Write("Email: ");
+                        newContact.Email = Console.ReadLine();
+
+                        myAddressBook.AddContact(newContact);
+                        Console.WriteLine("Contact added.");
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Enter the name of the contact to edit:");
+
+                        Console.Write("First Name: ");
+                        string firstName = Console.ReadLine();
+
+                        Console.Write("Last Name: ");
+                        string lastName = Console.ReadLine();
+
+                        myAddressBook.EditContact(firstName, lastName);
+                        break;
+
+                    case "3":
+                        myAddressBook.PrintContacts();
+                        break;
+
+                    case "4":
+                        return;
+
+                    default:
+                        Console.WriteLine("Invalid choice.");
+                        break;
                 }
             }
-
-            Console.WriteLine("\nAddress Book:");
-            myAddressBook.PrintContacts();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace AddressBookSystem
+﻿using System.Net;
+
+namespace AddressBookSystem
 {
     internal class Program
     {
@@ -11,6 +13,7 @@
 
             while (true)
             {
+                Console.WriteLine("Select an Option");
                 Console.WriteLine("1. Add a new contact");
                 Console.WriteLine("2. Edit an existing contact");
                 Console.WriteLine("3. Print all contacts");
@@ -23,36 +26,48 @@
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine("Enter contact information:");
+                        while (true)
+                        {
+                            Console.WriteLine("Enter contact information:");
 
-                        Contacts newContact = new Contacts();
+                            Contacts newContact = new Contacts();
 
-                        Console.Write("First Name: ");
-                        newContact.FirstName = Console.ReadLine();
+                            Console.Write("First Name: ");
+                            newContact.FirstName = Console.ReadLine();
 
-                        Console.Write("Last Name: ");
-                        newContact.LastName = Console.ReadLine();
+                            Console.Write("Last Name: ");
+                            newContact.LastName = Console.ReadLine();
 
-                        Console.Write("Address: ");
-                        newContact.Address = Console.ReadLine();
+                            Console.Write("Address: ");
+                            newContact.Address = Console.ReadLine();
 
-                        Console.Write("City: ");
-                        newContact.City = Console.ReadLine();
+                            Console.Write("City: ");
+                            newContact.City = Console.ReadLine();
 
-                        Console.Write("State: ");
-                        newContact.State = Console.ReadLine();
+                            Console.Write("State: ");
+                            newContact.State = Console.ReadLine();
 
-                        Console.Write("Zip: ");
-                        newContact.Zip = Console.ReadLine();
+                            Console.Write("Zip: ");
+                            newContact.Zip = Console.ReadLine();
 
-                        Console.Write("Phone Number: ");
-                        newContact.PhoneNumber = Console.ReadLine();
+                            Console.Write("Phone Number: ");
+                            newContact.PhoneNumber = Console.ReadLine();
 
-                        Console.Write("Email: ");
-                        newContact.Email = Console.ReadLine();
+                            Console.Write("Email: ");
+                            newContact.Email = Console.ReadLine();
 
-                        myAddressBook.AddContact(newContact);
-                        Console.WriteLine("Contact added.");
+                            myAddressBook.AddContact(newContact);
+
+                            Console.WriteLine("Contact added.");
+
+                            Console.Write("Do you want to add another contact? (Y/N): ");
+                            string answer = Console.ReadLine().ToUpper();
+
+                            if (answer == "N")
+                            {
+                                break;
+                            }
+                        }
                         break;
 
                     case "2":

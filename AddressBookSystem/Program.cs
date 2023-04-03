@@ -6,9 +6,10 @@
         {
             AddressBookManagement addressBookManager = new AddressBookManagement();
 
+            Console.WriteLine("Welcome to the Address Book Management System");
+
             while (true)
             {
-                Console.WriteLine("Welcome to the Address Book Management System");
                 Console.WriteLine("Please select an option:");
                 Console.WriteLine("1. Create a new address book");
                 Console.WriteLine("2. Add a contact to an address book");

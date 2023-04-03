@@ -6,9 +6,15 @@
 
         public void AddContact(Contacts contact)
         {
-            contacts.Add(contact);
+            if (contacts.Contains(contact))
+            {
+                Console.WriteLine("Contact already exists.");
+            }
+            else
+            {
+                contacts.Add(contact);
+            }
         }
-
         public void PrintContacts()
         {
             foreach (Contacts contact in contacts)

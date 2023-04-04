@@ -40,13 +40,26 @@ namespace AddressBookSystem
         {
             if (addressBooks.TryGetValue(addressBookName, out AddressBook addressBook))
             {
-                addressBook.PrintContacts();
+                List<Contacts> contacts = addressBook.contacts;
+                foreach (Contacts contact in contacts)
+                {
+                    Console.WriteLine("FirstName   = " + contact.FirstName);
+                    Console.WriteLine("LastName    = " + contact.LastName);
+                    Console.WriteLine("Address     = " + contact.Address);
+                    Console.WriteLine("City        = " + contact.City);
+                    Console.WriteLine("State       = " + contact.State);
+                    Console.WriteLine("Zip         = " + contact.Zip);
+                    Console.WriteLine("PhoneNumber = " + contact.PhoneNumber);
+                    Console.WriteLine("Email       = " + contact.Email);
+                    Console.WriteLine("------------------------");
+                }
             }
             else
             {
                 Console.WriteLine("Address book not found: " + addressBookName);
             }
         }
+
 
         public void EditContact(string addressBookName, string firstName, string lastName)
         {
@@ -71,6 +84,31 @@ namespace AddressBookSystem
                 Console.WriteLine("Address book not found: " + addressBookName);
             }
         }
+
+        public List<Contacts> SearchByCity(string city)
+        {
+            List<Contacts> contacts = new List<Contacts>();
+
+            foreach (AddressBook addressBook in addressBooks.Values)
+            {
+                contacts.AddRange(addressBook.GetContactsByCity(city));
+            }
+
+            return contacts;
+        }
+
+        public List<Contacts> SearchByState(string state)
+        {
+            List<Contacts> contacts = new List<Contacts>();
+
+            foreach (AddressBook addressBook in addressBooks.Values)
+            {
+                contacts.AddRange(addressBook.GetContactsByState(state));
+            }
+
+            return contacts;
+        }
+        }   
     }
 
-}
+

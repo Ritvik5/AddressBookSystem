@@ -92,5 +92,31 @@
             contacts.Remove(contactToDelete);
             Console.WriteLine("Contact deleted.");
         }
+
+        public List<Contacts> GetContactsByState(string state)
+        {
+            List<Contacts> contactsInState = new List<Contacts>();
+            foreach (Contacts contact in contacts)
+            {
+                if (contact.State == state)
+                {
+                    contactsInState.Add(contact);
+                }
+            }
+            return contactsInState;
+        }
+
+        public List<Contacts> GetContactsByCity(string city)
+        {
+            List<Contacts> contactsInCity = new List<Contacts>();
+            foreach (Contacts contact in contacts)
+            {
+                if (contact.City == city)
+                {
+                    contactsInCity.Add(contact);
+                }
+            }
+            return contactsInCity;
+        }
     }
 }

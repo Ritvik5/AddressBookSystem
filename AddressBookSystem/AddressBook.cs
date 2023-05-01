@@ -13,8 +13,14 @@
             else
             {
                 contacts.Add(contact);
+                string filePath = "C:\\Users\\sharm\\Desktop\\Fellowship program\\AddressBookSystem\\AddressBookSystem\\ContactUsingFileIO.txt"; 
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine($"First Name: {contact.FirstName}\nLast Name: {contact.LastName}\nAddress : {contact.Address}\nCity : {contact.City} \nState : {contact.State}\nZip : {contact.Zip}\nPhone Number: {contact.PhoneNumber}\nEmail: {contact.Email}");
+                }
             }
         }
+
         public void PrintContacts()
         {
             foreach (Contacts contact in contacts)

@@ -1,10 +1,15 @@
-﻿namespace AddressBookSystem
+﻿
+namespace AddressBookSystem
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            string filePath = "C:\\Users\\sharm\\Desktop\\Fellowship program\\AddressBookSystem\\AddressBookSystem\\ContactUsingFileIO.txt";
             AddressBookManagement addressBookManager = new AddressBookManagement();
+            Contacts contacts1 = new Contacts();
+
             Console.WriteLine("Welcome to Address Book Management System ");
 
             while (true)
@@ -125,7 +130,7 @@
                         }
                         break;
                     case 8:
-                        Environment.Exit(0);
+                        Environment.Exit(8);
                         break;
                     default:
                         Console.WriteLine("Invalid choice");
@@ -133,7 +138,6 @@
                 }
             }
         }
-
     }
 }
 

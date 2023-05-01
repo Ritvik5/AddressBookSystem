@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AddressBookSystem
+﻿namespace AddressBookSystem
 {
     class AddressBookManagement
     {
@@ -108,7 +102,8 @@ namespace AddressBookSystem
 
             return contacts;
         }
-        }   
+
     }
+}
 
 

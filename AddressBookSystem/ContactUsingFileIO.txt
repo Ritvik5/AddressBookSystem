@@ -1,0 +1,31 @@
+﻿
+FirstName   =   Ritvik
+LastName   =   Sharma
+Address   =  2nd Stage 
+City   =   Bangalore
+State   =   Karantaka
+Zip   =   560056
+PhoneNumber   =   8433432173
+Email   =   sharma.ritvik56@gmail.com
+
+
+FirstName   =   Ritvik
+LastName   =   Sharma
+Address   =  2nd Stage 
+City   =   Bangalore
+State   =   Karantaka
+Zip   =   560056
+PhoneNumber     =   8433432173
+Email   =   sharma.ritvik56@gmail.com
+
+
+
+First Name: Mohan, Last Name: Lal, Address : Saket, City : Delhi , State : UT, Zip : 100110 ,Phone Number: 9519519519, Email: mohan@gmail.com
+First Name: Raju
+, Last Name: Rastogi
+Address : 112/Kl
+City : Kanpur 
+State : UttarPradesh
+Zip : 560056
+Phone Number: 9999955555
+Email: raju@gamil.com
